@@ -75,7 +75,7 @@ inoremap <leader>l <RIGHT>
 nnoremap <leader>w <C-w>v<C-w>l
 
 nnoremap <leader>q :vert copen30<CR>
-execute "set <A-a>=\<esc>a"
+" execute "set <A-a>=\<esc>a"
 nnoremap <A-a> :AsyncRun grep -RiIn 
 
 "F6 line number

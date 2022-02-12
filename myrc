@@ -1,7 +1,9 @@
 #! /bin/zsh
 
-if [[ "$HOST" = "ugcpu"* ]]; then
-    export PATH=/usr/local/packages/python/python-3.9/bin:$HOME/.local/bin:$PATH
+if [[ "$HOST" = *"uwaterloo.ca" ]]; then
+    export PATH=$HOME/bin:$PATH
+elif [[ "$HOST" = "ugcpu"* ]]; then
+    export PATH=/usr/local/packages/python/python-3.9/bin:$HOME/bin:$HOME/.local/bin:$PATH
     export LD_LIBRARY_PATH=/data1/jackkyyh/nccl/build/lib:/usr/local/cuda-11.5/lib64:/usr/local/GNU/gcc11/lib64/:$LD_LIBRARY_PATH
     # export CUDA_HOME=/usr/local/cuda-11.5
     # export NCCL_HOME=/data/jackkyyh/nccl/build
@@ -52,7 +54,7 @@ alias untar="tar -xvf"
 
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
-alias my="vim ~/.my.conf"
+alias my="vim ~/.myrc"
 alias tmux.conf="vim ~/.tmux.conf"
 alias gshort="vim ~/.oh-my-zsh/plugins/git/README.md"
 

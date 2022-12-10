@@ -3,12 +3,53 @@
 if [[ "$HOST" = *"uwaterloo.ca" ]]; then
     export PATH=$HOME/bin:$PATH
 elif [[ "$HOST" = "ugcpu"* ]]; then
-    export PATH=/usr/local/packages/python/python-3.9/bin:$HOME/bin:$HOME/.local/bin:$PATH
-    export LD_LIBRARY_PATH=/data1/jackkyyh/nccl/build/lib:/usr/local/cuda-11.5/lib64:/usr/local/GNU/gcc11/lib64/:$LD_LIBRARY_PATH
-    # export CUDA_HOME=/usr/local/cuda-11.5
+    # export DISPLAY=0.0
+
+    export PATH=$HOME/.local/bin:$PATH
+    export LD_LIBRARY_PATH=~/.local/lib:$LD_LIBRARY_PATH
+    
+    # git
+    export PATH=/usr/local/software/git/bin:$PATH
+
+    # python 3.11
+    export PATH=/usr/local/packages/python/python-3.11/bin:$PATH
+
+    # CUDA 11
+    export LD_LIBRARY_PATH=/usr/local/cuda-11/lib64:$LD_LIBRARY_PATH
+
+    # gcc11
+    export PATH=/usr/local/GNU/gcc11/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/GNU/gcc11/lib64:$LD_LIBRARY_PATH
+
+    # cmake
+    export PATH=/usr/local/software/cmake/bin:$PATH
+
+    # OpenMPI
+    export PATH=$HOME/.local/openmpi/bin:$PATH
+
+    # Qt
+    # export PATH=/usr/local/software/qt6/bin:$PATH
+    # export QT_DEBUG_PLUGINS=1
+
+    # Tex
+    export PATH=~/.local/texlive/bin/x86_64-linux:$PATH
+    export MANPATH=~/.local/texlive/texmf-dist/doc/man:$MANPATH
+    export INFOPATH=~/.local/texlive/texmf-dist/doc/info:$INFOPATH
+
+    # TikZiT
+    export PATH=~/.local/tikzit/bin:$PATH
+
+    # export LD_LIBRARY_PATH=/data1/jackkyyh/tikzit-bin/lib:$LD_LIBRARY_PATH
+    # export LD_LIBRARY_PATH=$HOME/.local/openmpi/lib/:$LD_LIBRARY_PATH
+    
+    # Q++
+    # export CPATH=$HOME/.local/qpp/include/:$CPLUS_INCLUDE_PATH
+    
+    # Eigen
+    # export CPATH=$HOME/.local/eigen-3.4.0:$CPLUS_INCLUDE_PATH
+
     # export NCCL_HOME=/data/jackkyyh/nccl/build
     # export PATH=/usr/local/bin/python-csd-3.8:/homes/jhuangbo/.dotnet:/homes/jhuangbo/.dotnet/tools:$PATH
-    # export LD_LIBRARY_PATH=/usr/local/cuda-11.4/lib64:/usr/local/GNU/gcc11/lib64/:$LD_LIBRARY_PATH
     # export DOTNET_ROOT=/homes/jhuangbo/.dotnet
 
     export WORK=/data1/jackkyyh

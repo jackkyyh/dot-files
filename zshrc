@@ -65,11 +65,11 @@ ZSH_THEME="my"
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(zsh-autosuggestions git zsh-256color zsh-syntax-highlighting )
-# if [[ -n $SSH_CONNECTION ]]; then
-#     ZSH_TMUX_AUTOCONNECT=true
-#     ZSH_TMUX_AUTOSTART=true
-#     plugins+=(tmux)
-# fi
+if [[ -n $SSH_CONNECTION || ! -n $TERM_PROGRAM ]]; then
+    ZSH_TMUX_AUTOCONNECT=true
+    ZSH_TMUX_AUTOSTART=true
+    plugins+=(tmux)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,16 +123,16 @@ if [[ $TERM_PROGRAM == 'vscode' ]]; then
 elif [[ -n $SSH_CONNECTION ]]; then
     if [[ ! -n $TMUX  ]]; then
         # else
-            neofetch
+            # neofetch
             
             RANDOM=$$
             echo "\n\e[0;$(($(($RANDOM%6))+30))m"
-            echo "\tIMPORTANT: "
-            echo "\tTmux is no longer launched automatically. "
-            echo "\tPlease evoke it manually."
-            # echo -e -n "         \e[0;$(($(($RANDOM%6))+31))m Press any key to continue...  "   # Display prompt in red
-            # read -q -s key </dev/tty
-            # echo -e "\n         \e[0;$(($(($RANDOM%6))+30))m Evoking tmux..."
+            # echo "\tIMPORTANT: "
+            # echo "\tTmux is no longer launched automatically. "
+            # echo "\tPlease evoke it manually."
+            echo -e -n "         \e[0;$(($(($RANDOM%6))+31))m Press any key to continue...  "   # Display prompt in red
+            read -q -s key </dev/tty
+            echo -e "\n         \e[0;$(($(($RANDOM%6))+30))m Evoking tmux..."
             echo -e -n '\e[0;0m'                    # Turn off coloured output
         # fi
     fi

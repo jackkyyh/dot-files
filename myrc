@@ -27,6 +27,9 @@ elif [[ "$HOST" = "ugcpu"* ]]; then
     # OpenMPI
     export PATH=$HOME/.local/openmpi/bin:$PATH
 
+    # Node.JS
+    # export PATH=$HOME/data/node/bin:$PATH
+
     # Qt
     # export PATH=/usr/local/software/qt6/bin:$PATH
     # export QT_DEBUG_PLUGINS=1
@@ -52,7 +55,6 @@ elif [[ "$HOST" = "ugcpu"* ]]; then
     # export PATH=/usr/local/bin/python-csd-3.8:/homes/jhuangbo/.dotnet:/homes/jhuangbo/.dotnet/tools:$PATH
     # export DOTNET_ROOT=/homes/jhuangbo/.dotnet
 
-    export WORK=/data1/jackkyyh
     export PYTHONUSEBASE=$WORK
 elif [[ $OSTYPE = 'darwin'* ]]; then
     load_local_efi(){
@@ -110,8 +112,6 @@ bindkey '^a' end-of-line
 CSL="jhuangbo@csl2wk01.cse.ust.hk"
 UGCPU4="jhuangbo@ugcpu4.cse.ust.hk"
 UGCPU5="jhuangbo@ugcpu5.cse.ust.hk"
-UGCPU4_DIR=$UGCPU4":/data/jackkyyh"
-UGCPU5_DIR=$UGCPU5":/data/jackkyyh"
 PORT="-L 10450:localhost:10450"
 # UGCPU5_DIR=$UGCPU5":/localdata/jackkky"
 # alias my_sshcpu4="ssh -L 10440:localhost:10440 -L 10441:localhost:10441 -L 10442:localhost:10442 $UGCPU4"

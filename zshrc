@@ -65,7 +65,7 @@ ZSH_THEME="my"
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(zsh-autosuggestions git zsh-256color zsh-syntax-highlighting )
-if [[ -n $SSH_CONNECTION || ! -n $TERM_PROGRAM ]]; then
+if [[ -n $SSH_CONNECTION && ! -n $TERM_PROGRAM ]]; then
     ZSH_TMUX_AUTOCONNECT=true
     ZSH_TMUX_AUTOSTART=true
     plugins+=(tmux)
@@ -136,8 +136,6 @@ elif [[ -n $SSH_CONNECTION ]]; then
             echo -e -n '\e[0;0m'                    # Turn off coloured output
         # fi
     fi
-
-    # cd $WORK
 fi
 
 # >>> conda initialize >>>
@@ -155,3 +153,7 @@ fi
 # unset __conda_setup
 # <<< conda initialize <<<
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

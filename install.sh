@@ -1,6 +1,6 @@
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Install theme
 ln -s ~/my-dot-files/custom.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/custom.zsh-theme

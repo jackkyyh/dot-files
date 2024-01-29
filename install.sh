@@ -18,7 +18,7 @@ mv ~/.zshrc ~/.zshrc_bak
 ln -s ~/my-dot-files/zshrc ~/.zshrc
 
 # Install custom.zsh
-ln -s ~/my-dot-files/myrc ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/custom.zsh
+ln -s ~/my-dot-files/custom.zsh ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/custom.zsh
 
 
 

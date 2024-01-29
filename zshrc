@@ -65,11 +65,11 @@ ZSH_THEME="my"
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(zsh-autosuggestions git zsh-256color zsh-syntax-highlighting )
-if [[ -n $SSH_CONNECTION && ! -n $TERM_PROGRAM ]]; then
-    ZSH_TMUX_AUTOCONNECT=true
-    ZSH_TMUX_AUTOSTART=true
-    plugins+=(tmux)
-fi
+# if [[ -n $SSH_CONNECTION && ! -n $TERM_PROGRAM ]]; then
+#     ZSH_TMUX_AUTOCONNECT=true
+#     ZSH_TMUX_AUTOSTART=true
+#     plugins+=(tmux)
+# fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-. ~/.myrc
+# . ~/.myrc
 
 
 # function zle-line-init zle-keymap-select {
@@ -118,25 +118,25 @@ source $ZSH/oh-my-zsh.sh
 #     export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 # fi
 
-if [[ $TERM_PROGRAM == 'vscode' ]]; then
-    echo 'Welcome to zsh in vscode.'
-elif [[ -n $SSH_CONNECTION ]]; then
-    if [[ ! -n $TMUX  ]]; then
-        # else
-            # neofetch
+# if [[ $TERM_PROGRAM == 'vscode' ]]; then
+#     echo 'Welcome to zsh in vscode.'
+# elif [[ -n $SSH_CONNECTION ]]; then
+#     if [[ ! -n $TMUX  ]]; then
+#         # else
+#             # neofetch
             
-            RANDOM=$$
-            echo "\n\e[0;$(($(($RANDOM%6))+30))m"
-            # echo "\tIMPORTANT: "
-            # echo "\tTmux is no longer launched automatically. "
-            # echo "\tPlease evoke it manually."
-            echo -e -n "         \e[0;$(($(($RANDOM%6))+31))m Press any key to continue...  "   # Display prompt in red
-            read -q -s key </dev/tty
-            echo -e "\n         \e[0;$(($(($RANDOM%6))+30))m Evoking tmux..."
-            echo -e -n '\e[0;0m'                    # Turn off coloured output
-        # fi
-    fi
-fi
+#             RANDOM=$$
+#             echo "\n\e[0;$(($(($RANDOM%6))+30))m"
+#             # echo "\tIMPORTANT: "
+#             # echo "\tTmux is no longer launched automatically. "
+#             # echo "\tPlease evoke it manually."
+#             echo -e -n "         \e[0;$(($(($RANDOM%6))+31))m Press any key to continue...  "   # Display prompt in red
+#             read -q -s key </dev/tty
+#             echo -e "\n         \e[0;$(($(($RANDOM%6))+30))m Evoking tmux..."
+#             echo -e -n '\e[0;0m'                    # Turn off coloured output
+#         # fi
+#     fi
+# fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -154,6 +154,6 @@ fi
 # <<< conda initialize <<<
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

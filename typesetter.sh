@@ -17,7 +17,7 @@ zcat < install-tl-unx.tar.gz | tar xf -
 # https://ctan.org/mirrors/mirmon
 sudo perl install-tl-20*/install-tl --no-interaction --scheme=basic --repository https://mirror-hk.koddos.net/CTAN/systems/texlive/tlnet
 
-echo "export PATH=/usr/local/texlive/2023/bin/x86_64-linux:\$PATH" >> $RC_FILE
+echo "export PATH=/usr/local/texlive/2024/bin/x86_64-linux:\$PATH" >> $RC_FILE
 
 
 # TikZiT
@@ -39,7 +39,7 @@ cd ..
 rm -rf tmp
 
 # Additional setup
-sudo /usr/local/texlive/2023/bin/x86_64-linux/tlmgr install pgf preview mathtools braket
+sudo /usr/local/texlive/2024/bin/x86_64-linux/tlmgr install pgf preview mathtools braket
 # wget https://tikzit.github.io/tikzit.sty
 
 

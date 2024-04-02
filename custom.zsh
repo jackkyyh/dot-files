@@ -8,6 +8,7 @@ elif [[ "$OSTYPE" = "darwin"* ]]; then
     alias enable_proxy="export ALL_PROXY=socks5://127.0.0.1:7890"
     alias disable_proxy="unset ALL_PROXY"
     # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 alias untar="tar -xvf"

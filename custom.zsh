@@ -9,6 +9,7 @@ elif [[ "$OSTYPE" = "darwin"* ]]; then
     alias disable_proxy="unset ALL_PROXY"
     # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    alias alist="cd ~/alist;./alist server"
 fi
 
 alias untar="tar -xvf"
@@ -16,7 +17,7 @@ alias untar="tar -xvf"
 alias vimrc="vim ~/.vimrc"
 alias customrc="vim "$0
 
-bindkey -v
+# bindkey -v
 # bindkey '^P' up-history
 # bindkey '^N' down-history
 bindkey '^w' backward-kill-word

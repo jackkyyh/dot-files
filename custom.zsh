@@ -5,11 +5,12 @@ if [[ "$HOST" = *"gpugate1" || "$HOST" = *"gpu2gate1" ]]; then
     alias gpu-interactive="srun --gres=gpu:1 --cpus-per-task=4 --pty sh -c 'echo Node ip: \$(hostname -I); zsh'"
     alias gpu-interactive-3090="srun -p q3090 --gres=gpu:rtx3090:2 --cpus-per-task=8 --pty sh -c 'echo Node ip: \$(hostname -I); zsh'"
 elif [[ "$OSTYPE" = "darwin"* ]]; then
-    alias enable_proxy="export ALL_PROXY=socks5://127.0.0.1:7890"
+    alias enable_proxy="export ALL_PROXY=socks5://127.0.0.1:7897"
     alias disable_proxy="unset ALL_PROXY"
     # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
     eval "$(/opt/homebrew/bin/brew shellenv)"
     alias alist="cd ~/alist;./alist server"
+    alias kill-server="echo 'Killing VS Code server on GATE3...' && ssh GATE3 'pkill -u jackkyyh -f .vscode-server'"
 fi
 
 alias untar="tar -xvf"

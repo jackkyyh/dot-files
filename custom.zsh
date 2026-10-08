@@ -11,6 +11,8 @@ elif [[ "$OSTYPE" = "darwin"* ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
     alias alist="cd ~/alist;./alist server"
     alias kill-server="echo 'Killing VS Code server on GATE3...' && ssh GATE3 'pkill -u jackkyyh -f .vscode-server'"
+elif [[ "$HOST" = *"weishen" ]]; then
+    export PATH=$HOME/.local/bin:$PATH
 fi
 
 alias untar="tar -xvf"
